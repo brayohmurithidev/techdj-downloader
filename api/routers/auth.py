@@ -2,14 +2,15 @@ from fastapi import APIRouter
 from starlette.responses import RedirectResponse
 import urllib.parse
 import requests
+import os
 
 router = APIRouter(prefix='/auth')
 
-SPOTIFY_CLIENT_ID = "db5154ed2c3d4d40973d85eb4dc44f33"
-SPOTIFY_REDIRECT_URI = "https://7a43-102-217-67-107.ngrok-free.app/api/auth/spotify/callback"
-SCOPES = "playlist-read-private user-read-email"
-SPOTIFY_CLIENT_SECRET="690312bb086c4b8db3fd82965e6b7448"
-FRONTEND_REDIRECT="http://localhost:5173/spotify/callback"
+SPOTIFY_CLIENT_ID = os.environ.get("SPOTIFY_CLIENT_ID")
+SPOTIFY_REDIRECT_URI = os.environ.get("SPOTIFY_REDIRECT_URI")
+SCOPES = os.environ.get("SPOTIFY_SCOPES")
+SPOTIFY_CLIENT_SECRET=os.environ.get("SPOTIFY_CLIENT_SECRET")
+FRONTEND_REDIRECT=os.environ.get("FRONTEND_REDIRECT")
 
 
 # Login
