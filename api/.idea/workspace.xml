@@ -5,16 +5,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c801183-aac6-4e03-ae11-3fb524b3e31e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/spotify_playlist_downloader.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/techdj-downloader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/techdj-downloader.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/codealike.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/codealike.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/eslint.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/placeholder.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/DownloadHistory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/DownloadProgress.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/SearchForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/SearchResultCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/SearchResults.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/TrackResultCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/alert-dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/alert-dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/alert.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/alert.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/aspect-ratio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/aspect-ratio.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/breadcrumb.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/calendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/calendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/carousel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/carousel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/command.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/command.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/context-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/context-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/drawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/drawer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/hover-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/hover-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/input-otp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/input-otp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/menubar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/menubar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/navigation-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/navigation-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/pagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/progress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/radio-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/radio-group.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/resizable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/resizable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/sheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/slider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/slider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/sonner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/sonner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/textarea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/toast.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/toaster.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/toggle-group.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/toggle-group.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/tooltip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/ui/tooltip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/ui/use-toast.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/hooks/use-mobile.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/hooks/use-toast.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/lib/api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/NotFound.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Search.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tailwind.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/tsconfig.node.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/tsconfig.node.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +102,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -47,14 +118,21 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/fazitech/dev/getting_back/techdj-downloader/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/routers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="spotify_playlist_downloader" type="Python.FastAPI">
       <option name="file" value="$PROJECT_DIR$/main.py" />
@@ -89,6 +167,7 @@
       <updated>1749489200043</updated>
       <workItem from="1749489201090" duration="80000" />
       <workItem from="1749489292812" duration="10649000" />
+      <workItem from="1750177074907" duration="11718000" />
     </task>
     <servers />
   </component>

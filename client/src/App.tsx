@@ -1,36 +1,31 @@
+import {Navigate, Route, Routes} from "react-router";
+import Login from "./pages/Login";
+import AuthCallback from "./pages/AuthCallback";
+import DashboardLayout from "./components/layout/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import Playlist from "./pages/Playlist";
+import {useEffect} from "react";
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Search from "./pages/Search";
-import NotFound from "./pages/NotFound";
+function App() {
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      retry: 3,
-    },
-  },
-});
+  return (
+    <div className="dark min-h-screen bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] text-zinc-200">
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/auth/callback" element={<AuthCallback />} />
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Search />} />
-          <Route path="/search" element={<Search />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+        {/* Protected routes */}
+        <Route path="/" element={<DashboardLayout />}>
+          <Route index element={<Navigate to="/dashboard" replace />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="playlist/:id" element={<Playlist />} />
+        </Route>
+      </Routes>
+    </div>
+  );
+}
 
 export default App;
