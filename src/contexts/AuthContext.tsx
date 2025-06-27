@@ -39,32 +39,48 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const navigate = useNavigate();
 
   const checkAuth = (): boolean => {
-    const userData = localStorage.getItem('user_data');
+    // Check if user is authenticated based on token presence
+    const isAuth = authUtils.isAuthenticated();
+    console.log('AuthContext: checkAuth - isAuth:', isAuth);
     
-    if (authUtils.isAuthenticated() && userData) {
-      try {
-        const parsedUser = JSON.parse(userData);
-        setUser(parsedUser);
-        return true;
-      } catch (error) {
-        console.error('Error parsing user data:', error);
-        logout();
-        return false;
+    if (isAuth) {
+      // Try to load user data if available
+      const userData = localStorage.getItem('user_data');
+      if (userData) {
+        try {
+          const parsedUser = JSON.parse(userData);
+          setUser(parsedUser);
+          console.log('AuthContext: checkAuth - loaded user data:', parsedUser);
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+          // Don't logout here, just clear the invalid user data
+          localStorage.removeItem('user_data');
+        }
       }
+      return true;
     }
+    
+    // Clear user state if not authenticated
+    setUser(null);
     return false;
   };
 
   const login = (token: string, userData?: User) => {
+    console.log('AuthContext: login called with token:', !!token, 'userData:', userData);
     authUtils.setToken(token);
     
     if (userData) {
       localStorage.setItem('user_data', JSON.stringify(userData));
       setUser(userData);
     }
+    
+    // Navigate to dashboard after successful login
+    console.log('AuthContext: navigating to dashboard');
+    navigate('/dashboard');
   };
 
   const logout = () => {
+    console.log('AuthContext: logout called');
     // Clear all auth-related data using auth utils
     authUtils.clearAuth();
     
@@ -76,6 +92,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   useEffect(() => {
+    console.log('AuthContext: useEffect - checking auth on mount');
     // Set the logout handler in axios config
     setLogoutHandler(logout);
     
@@ -83,15 +100,21 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const isAuth = checkAuth();
     setIsLoading(false);
     
+    console.log('AuthContext: useEffect - isAuth:', isAuth, 'pathname:', window.location.pathname);
+    
     // If not authenticated and not on login page, redirect to login
     if (!isAuth && window.location.pathname !== '/login' && window.location.pathname !== '/auth/callback') {
+      console.log('AuthContext: redirecting to login');
       navigate('/login');
     }
   }, [navigate]);
 
+  const isAuthenticated = authUtils.isAuthenticated();
+  console.log('AuthContext: isAuthenticated:', isAuthenticated, 'user:', user);
+
   const value: AuthContextType = {
     user,
-    isAuthenticated: !!user,
+    isAuthenticated, // Use token-based authentication check
     isLoading,
     login,
     logout,

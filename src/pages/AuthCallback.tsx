@@ -24,7 +24,6 @@ export default function AuthCallback() {
       }
       
       login(token, parsedUser);
-      navigate("/dashboard");
     } else {
       navigate("/login");
     }
