@@ -1,94 +1,54 @@
+# React + TypeScript + Vite
 
-## 🔧 Tech Stack
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### Backend
-- Python
-- FastAPI (implied by the project structure)
-- YouTube-DL integration
-- Spotify API integration
+Currently, two official plugins are available:
 
-### Frontend
-- React 18.3.1
-- TypeScript 5.5.3
-- Various Radix UI components for modern UI elements
-- TailwindCSS (implied by tailwindcss-animate)
-- Vite 5.4.1 as build tool
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🚀 Getting Started
+## Expanding the ESLint configuration
 
-### Prerequisites
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- Node.js and npm
-- Python 3.x
-- Spotify Developer Account
-- YouTube API credentials
-
-### Installation
-
-1. Clone the repository: 
-```
-git clone https://github.com/yourusername/techdj-downloader.git
-```
-2. Set up the backend:
-```aiignore
-cd api python -m venv .venv source .venv/bin/activate
-pip install -r requirements.txt
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-3. Set up the frontend:
-```aiignore
-cd client  && npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
 ```
-
-
-### Configuration
-
-1. Create necessary environment variables for:
-   - Spotify API credentials
-   - YouTube API credentials
-   - Backend API endpoints
-
-2. Configure your Spotify Developer settings to allow authentication
-
-### Running the Application
-
-1. Start the backend server:
-```aiignore
-cd api uvicorn main:app --reload
-```
-
-2. Start the frontend development server:
-```aiignore
-cd client npm run dev
-```
-
-## 🔒 Security Notes
-
-- Never commit sensitive credentials to the repository
-- Use environment variables for all sensitive information
-- Follow OAuth 2.0 best practices for Spotify authentication
-
-## 🛣️ Roadmap
-
-- [ ] Add support for playlist synchronization
-- [ ] Implement batch downloading
-- [ ] Add music format conversion options
-- [ ] Include progress tracking for downloads
-- [ ] Add support for other music streaming platforms
-
-## ⚖️ Legal Notice
-
-This tool is intended for personal use only. Users are responsible for complying with YouTube's terms of service and respecting copyright laws in their jurisdiction.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-[Add your chosen license here]
-
----
-
-For questions and support, please open an issue in the repository.
-
