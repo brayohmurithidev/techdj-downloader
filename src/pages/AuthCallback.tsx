@@ -1,26 +1,38 @@
 import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router";
+import { useAuth } from "@/contexts/AuthContext";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
 export default function AuthCallback() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   useEffect(() => {
     const token = searchParams.get("token");
+    const userData = searchParams.get("user");
+    
     if (token) {
-      localStorage.setItem("spotify_token", token);
+      let parsedUser = undefined;
+      
+      if (userData) {
+        try {
+          parsedUser = JSON.parse(decodeURIComponent(userData));
+        } catch (error) {
+          console.error('Error parsing user data:', error);
+        }
+      }
+      
+      login(token, parsedUser);
       navigate("/dashboard");
     } else {
       navigate("/login");
     }
-  }, [searchParams, navigate]);
+  }, [searchParams, navigate, login]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h2 className="text-xl font-semibold">Processing login...</h2>
-        <p className="text-muted-foreground">Please wait while we redirect you.</p>
-      </div>
+      <LoadingSpinner size="lg" text="Processing login..." />
     </div>
   );
 }

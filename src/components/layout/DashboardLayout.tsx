@@ -1,8 +1,10 @@
 import { LogOut, Music, Disc3, Home, Settings } from "lucide-react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
+import { useAuth } from "@/contexts/AuthContext";
+import { useUserProfile } from "@/hooks/useUserProfile";
 
 const navItems = [
   { name: "Home", icon: Home, to: "/dashboard" },
@@ -11,12 +13,14 @@ const navItems = [
 ];
 
 export default function DashboardLayout() {
-  const navigate = useNavigate();
   const location = useLocation();
+  const { logout, user } = useAuth();
+  
+  // Fetch user profile if not available
+  useUserProfile();
 
   const handleLogout = () => {
-    localStorage.removeItem("spotify_token");
-    navigate("/login");
+    logout();
   };
 
   return (
@@ -60,10 +64,19 @@ export default function DashboardLayout() {
         {/* Top bar */}
         <header className="h-14 border-b border-zinc-800 flex items-center justify-between px-4 bg-[#181818]">
           <span className="text-base font-semibold text-zinc-300 tracking-tight">TechDJ</span>
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>DJ</AvatarFallback>
-          </Avatar>
+          <div className="flex items-center gap-3">
+            {user?.display_name && (
+              <span className="hidden md:block text-sm text-zinc-400">
+                {user.display_name}
+              </span>
+            )}
+            <Avatar>
+              <AvatarImage src={user?.images?.[0]?.url || "https://github.com/shadcn.png"} />
+              <AvatarFallback>
+                {user?.display_name?.charAt(0)?.toUpperCase() || "DJ"}
+              </AvatarFallback>
+            </Avatar>
+          </div>
         </header>
         {/* Page content */}
         <main className="flex-1 p-6 md:p-10 bg-transparent">

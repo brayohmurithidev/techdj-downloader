@@ -5,6 +5,9 @@ import DashboardLayout from "./components/layout/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import Playlist from "./pages/Playlist";
 import {useEffect} from "react";
+import {AuthProvider} from "./contexts/AuthContext";
+import {ProtectedRoute} from "./components/auth/ProtectedRoute";
+import {AuthErrorBoundary} from "./components/auth/AuthErrorBoundary";
 
 function App() {
   useEffect(() => {
@@ -13,17 +16,25 @@ function App() {
 
   return (
     <div className="dark min-h-screen bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] text-zinc-200">
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/auth/callback" element={<AuthCallback />} />
+      <AuthErrorBoundary>
+        <AuthProvider>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
 
-        {/* Protected routes */}
-        <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<Navigate to="/dashboard" replace />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="playlist/:id" element={<Playlist />} />
-        </Route>
-      </Routes>
+            {/* Protected routes */}
+            <Route path="/" element={
+              <ProtectedRoute>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }>
+              <Route index element={<Navigate to="/dashboard" replace />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="playlist/:id" element={<Playlist />} />
+            </Route>
+          </Routes>
+        </AuthProvider>
+      </AuthErrorBoundary>
     </div>
   );
 }
