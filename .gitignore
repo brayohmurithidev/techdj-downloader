@@ -1,10 +1,6 @@
 # Node modules (client)
 client/node_modules/
 
-# Python cache files (api)
-api/__pycache__/
-api/*.pyc
-*.py[cod]
 
 # macOS system files
 .DS_Store
@@ -15,9 +11,6 @@ api/*.pyc
 # Environment files
 .env
 .env.*
-
-# Downloaded content (assuming these are runtime artifacts)
-api/downloads/
 
 # Logs
 *.log
