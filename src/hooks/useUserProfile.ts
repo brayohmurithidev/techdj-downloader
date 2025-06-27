@@ -28,6 +28,7 @@ interface SpotifyUser {
 export const useUserProfile = () => {
   const { isAuthenticated, user, login } = useAuth();
 
+
   return useQuery({
     queryKey: ['user-profile'],
     queryFn: async (): Promise<SpotifyUser> => {
@@ -35,7 +36,8 @@ export const useUserProfile = () => {
       return response.data;
     },
     enabled: isAuthenticated && !user?.display_name, // Only fetch if authenticated but no user data
-    onSuccess: (data) => {
+    // @ts-ignore
+    onSuccess: (data: { id: any; display_name: any; email: any; images: any; }) => {
       // Update the auth context with user data
       const token = localStorage.getItem('spotify_token');
       if (token) {
